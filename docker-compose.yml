@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+  database-service:
+    build:
+      context: ./server/database
+      dockerfile: Dockerfile
+    container_name: dealership-database
+    ports:
+      - "3030:3030"
+    environment:
+      - PORT=3030
+    networks:
+      - dealership-net
+
+  sentiment-service:
+    build:
+      context: ./server/sentiment_analyzer
+      dockerfile: Dockerfile
+    container_name: dealership-sentiment
+    ports:
+      - "5000:5000"
+    environment:
+      - PORT=5000
+    networks:
+      - dealership-net
+
+  django-app:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    container_name: dealership-django
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./server:/app
+    ports:
+      - "8000:8000"
+    environment:
+      - backend_url=http://database-service:3030
+      - sentiment_analyzer_url=http://sentiment-service:5000
+    depends_on:
+      - database-service
+      - sentiment-service
+    networks:
+      - dealership-net
+
+networks:
+  dealership-net:
+    driver: bridge

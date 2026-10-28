@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Best Dealership Network</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #0f172a;
+            --accent-color: #0284c7;
+            --accent-hover: #0369a1;
+            --bg-light: #f8fafc;
+        }
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-light);
+            color: #334155;
+        }
+        .navbar-custom {
+            background-color: var(--primary-color);
+            padding: 1rem 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+        }
+        .navbar-brand {
+            color: #38bdf8 !important;
+            font-weight: 700;
+            font-size: 1.4rem;
+            letter-spacing: 0.5px;
+        }
+        .nav-link {
+            color: #cbd5e1 !important;
+            font-weight: 500;
+            margin: 0 0.5rem;
+            transition: color 0.2s ease;
+        }
+        .nav-link:hover, .nav-link.active {
+            color: #38bdf8 !important;
+        }
+        .hero-banner {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0369a1 100%);
+            color: white;
+            padding: 5rem 2rem;
+            text-align: center;
+            border-bottom: 4px solid #38bdf8;
+        }
+        .hero-banner h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+        .team-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.07);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+            border: 1px solid #e2e8f0;
+        }
+        .team-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.15);
+        }
+        .team-avatar {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            border-bottom: 3px solid #38bdf8;
+        }
+        .team-content {
+            padding: 1.5rem;
+        }
+        .team-role {
+            color: var(--accent-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+        .team-name {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 0.5rem;
+        }
+        .team-desc {
+            font-size: 0.95rem;
+            color: #64748b;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        .team-email {
+            font-size: 0.88rem;
+            color: #0284c7;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 500;
+        }
+        .team-email:hover {
+            color: #0369a1;
+            text-decoration: underline;
+        }
+        footer {
+            background-color: var(--primary-color);
+            color: #94a3b8;
+            padding: 2.5rem 0;
+            margin-top: 4rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <i class="fa-solid fa-car-side me-2"></i>Dealership Central
+            </a>
+            <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/"><i class="fa-solid fa-house me-1"></i>Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/about"><i class="fa-solid fa-users me-1"></i>About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact"><i class="fa-solid fa-envelope me-1"></i>Contact Us</a>
+                    </li>
+                    <li class="nav-item ms-lg-3">
+                        <a class="btn btn-outline-info text-white" href="/login">Login / Register</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Banner -->
+    <header class="hero-banner">
+        <div class="container">
+            <h1>Driving Excellence Across the Nation</h1>
+            <p class="lead text-light max-w-2xl mx-auto">
+                Welcome to Dealership Central, the nation's premier automobile discovery and review platform. 
+                We connect certified car dealerships with vehicle buyers, powered by real customer feedback and AI-driven sentiment analysis.
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container my-5">
+        <div class="row align-items-center mb-5">
+            <div class="col-lg-6">
+                <h2 class="fw-bold mb-3" style="color: #0f172a;">Our Mission & Vision</h2>
+                <p class="text-secondary lead">
+                    Founded in 2024, our platform provides complete transparency in vehicle buying. With hundreds of certified dealerships across all 50 states, we empower motorists with authentic ratings, vehicle specifications, and transparent dealer service reviews.
+                </p>
+                <div class="row g-3 mt-2">
+                    <div class="col-sm-6">
+                        <div class="p-3 bg-white rounded border">
+                            <h4 class="fw-bold text-primary mb-1">500+</h4>
+                            <p class="text-muted mb-0">Verified Dealerships</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="p-3 bg-white rounded border">
+                            <h4 class="fw-bold text-primary mb-1">25,000+</h4>
+                            <p class="text-muted mb-0">Customer Reviews</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 text-center mt-4 mt-lg-0">
+                <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=800&q=80" 
+                     alt="Modern Dealership Showroom" class="img-fluid rounded-4 shadow">
+            </div>
+        </div>
+
+        <!-- Leadership Team -->
+        <div class="text-center mb-5">
+            <span class="badge bg-primary-subtle text-primary px-3 py-2 rounded-pill fs-6">Leadership</span>
+            <h2 class="fw-bold mt-2" style="color: #0f172a;">Meet Our Executive Team</h2>
+            <p class="text-muted">Passionate industry veterans committed to transforming your car buying journey.</p>
+        </div>
+
+        <div class="row g-4">
+            <!-- Member 1 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="team-card">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80" 
+                         alt="Sarah Jenkins" class="team-avatar">
+                    <div class="team-content">
+                        <div class="team-role">Chief Executive Officer</div>
+                        <h3 class="team-name">Sarah Jenkins</h3>
+                        <p class="team-desc">
+                            15+ years in automotive executive leadership and digital transformation. Sarah leads our strategic growth and national dealer partnerships.
+                        </p>
+                        <a href="mailto:sarah.jenkins@dealershipcentral.com" class="team-email">
+                            <i class="fa-solid fa-envelope"></i> sarah.jenkins@dealershipcentral.com
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Member 2 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="team-card">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80" 
+                         alt="Marcus Vance" class="team-avatar">
+                    <div class="team-content">
+                        <div class="team-role">Chief Technology Officer</div>
+                        <h3 class="team-name">Marcus Vance</h3>
+                        <p class="team-desc">
+                            Architect of our microservice infrastructure and IBM Cloud Watson sentiment integration. Marcus ensures rapid, reliable dealer search.
+                        </p>
+                        <a href="mailto:marcus.vance@dealershipcentral.com" class="team-email">
+                            <i class="fa-solid fa-envelope"></i> marcus.vance@dealershipcentral.com
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Member 3 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="team-card">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80" 
+                         alt="Elena Rostova" class="team-avatar">
+                    <div class="team-content">
+                        <div class="team-role">Head of Customer Experience</div>
+                        <h3 class="team-name">Elena Rostova</h3>
+                        <p class="team-desc">
+                            Dedicated to review authenticity and user trust. Elena oversees dealer verification and quality assurance across our network.
+                        </p>
+                        <a href="mailto:elena.rostova@dealershipcentral.com" class="team-email">
+                            <i class="fa-solid fa-envelope"></i> elena.rostova@dealershipcentral.com
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p class="mb-1">&copy; 2026 Dealership Central. All Rights Reserved. IBM Full-Stack Capstone Project.</p>
+            <small class="text-secondary">Designed with modern microservice architecture on Django, React, Express, and IBM Cloud.</small>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

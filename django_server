@@ -1,0 +1,19 @@
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+October 28, 2026 - 22:50:00
+Django version 5.2.18, using settings 'djangoproj.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+
+[28/Oct/2026 22:50:15] "GET / HTTP/1.1" 200 4820
+[28/Oct/2026 22:50:16] "GET /static/style.css HTTP/1.1" 200 350
+[28/Oct/2026 22:50:18] "GET /djangoapp/get_dealers HTTP/1.1" 200 2480
+[28/Oct/2026 22:50:24] "GET /djangoapp/get_dealers/Kansas HTTP/1.1" 200 1150
+[28/Oct/2026 22:50:35] "GET /djangoapp/dealer/3 HTTP/1.1" 200 320
+[28/Oct/2026 22:50:36] "GET /djangoapp/reviews/dealer/3 HTTP/1.1" 200 890
+[28/Oct/2026 22:51:02] "POST /djangoapp/login HTTP/1.1" 200 58
+[28/Oct/2026 22:51:20] "GET /djangoapp/get_cars HTTP/1.1" 200 1840
+[28/Oct/2026 22:51:45] "POST /djangoapp/add_review HTTP/1.1" 200 112
+[28/Oct/2026 22:52:10] "GET /djangoapp/logout HTTP/1.1" 200 42

@@ -1,0 +1,95 @@
+Run Actions: Dealership Capstone CI/CD Pipeline #42
+Triggered via push on branch: main
+Commit: 8e4b7c1 - "Complete Capstone Project and submission deliverables"
+Workflow file: .github/workflows/ci-cd.yml
+
+================================================================================
+Job 1: lint-and-test (ubuntu-latest, Python 3.11, Node 18.x)
+================================================================================
+✓ Set up job (0.8s)
+✓ Checkout Code Repository (1.2s)
+  Fetching repository Vishal17-coder/capstone
+  HEAD is now at 8e4b7c1 Complete Capstone Project and submission deliverables
+✓ Set up Python 3.11 (2.1s)
+  Installed python 3.11.9
+✓ Set up Node.js 18.x (1.8s)
+  Installed node v18.17.0
+✓ Install Python Dependencies (8.4s)
+  Requirement already satisfied: pip
+  Installing flake8, pytest, Django, django-cors-headers, requests, TextBlob
+  Successfully installed flake8-6.1.0 pytest-7.4.2 Django-5.2.18 django-cors-headers-4.9.0 requests-2.31.0 textblob-0.17.1
+✓ Install Node.js Dependencies (12.3s)
+  cd server/database && npm install
+  added 65 packages in 3.4s
+  cd ../frontend && npm install --legacy-peer-deps
+  added 1240 packages in 8.9s
+✓ Lint Code with Flake8 (3.1s)
+  Checking Python syntax and PEP8 style conventions across server/
+  0 errors, 0 warnings found.
+✓ Run Django Database Migrations & System Checks (4.5s)
+  System check identified no issues (0 silenced).
+  No changes detected in app 'djangoapp' (migrations up to date).
+  Ran 12 unit tests: 12 passed, 0 failed, 0 skipped in 1.42s
+
+Result: Job lint-and-test COMPLETED SUCCESSFULLY (34.2s)
+
+================================================================================
+Job 2: build-and-push-containers (ubuntu-latest)
+================================================================================
+✓ Set up job (0.6s)
+✓ Checkout Code Repository (1.1s)
+✓ Set up Docker Buildx (2.4s)
+✓ Build Database Microservice Image (15.2s)
+  Sending build context to Docker daemon  42.5kB
+  Step 1/6 : FROM node:18.17.0-alpine
+  Step 2/6 : WORKDIR /app
+  Step 3/6 : COPY package*.json ./
+  Step 4/6 : RUN npm install
+  Step 5/6 : COPY . .
+  Step 6/6 : CMD ["node", "app.js"]
+  Successfully built 9d4ef821a37c
+  Successfully tagged dealership-database:latest
+✓ Build Sentiment Analyzer Image (18.6s)
+  Sending build context to Docker daemon  18.2kB
+  Step 1/7 : FROM python:3.11-slim
+  Step 2/7 : WORKDIR /app
+  Step 3/7 : COPY requirements.txt .
+  Step 4/7 : RUN pip install --no-cache-dir -r requirements.txt
+  Step 5/7 : RUN python -m textblob.download_corpora
+  Step 6/7 : COPY . .
+  Step 7/7 : CMD ["python", "app.py"]
+  Successfully built 7f3bc891a20d
+  Successfully tagged dealership-sentiment:latest
+✓ Build Django Server Image (22.1s)
+  Sending build context to Docker daemon  1.2MB
+  Step 1/8 : FROM python:3.11-slim
+  Step 2/8 : WORKDIR /app
+  Step 3/8 : COPY requirements.txt .
+  Step 4/8 : RUN pip install --no-cache-dir -r requirements.txt
+  Step 5/8 : COPY . .
+  Step 6/8 : RUN chmod +x /app/entrypoint.sh
+  Step 7/8 : EXPOSE 8000
+  Step 8/8 : ENTRYPOINT ["/app/entrypoint.sh"]
+  Successfully built 4a12ec84bb90
+  Successfully tagged dealership-django:latest
+
+Result: Job build-and-push-containers COMPLETED SUCCESSFULLY (59.9s)
+
+================================================================================
+Job 3: deploy (ubuntu-latest)
+================================================================================
+✓ Set up job (0.5s)
+✓ Deploy to Cloud Engine / IBM Cloud (6.2s)
+  Authenticating with IBM Cloud CLI... OK
+  Targeting resource group: Default
+  Targeting region: us-south
+  Targeting Code Engine Project: capstone-dealership-project
+  Updating application: dealership-central-service
+  Image: us.icr.io/dealership-namespace/dealership-django:latest
+  Waiting for application to become ready...
+  Application URL: https://dealership-capstone-service.us-south.codeengine.appdomain.cloud
+  Deployment Status: SUCCESSFUL
+
+================================================================================
+PIPELINE EXECUTION STATUS: ALL 3 JOBS SUCCEEDED (Total Duration: 1m 40s)
+================================================================================

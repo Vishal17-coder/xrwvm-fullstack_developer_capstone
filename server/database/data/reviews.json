@@ -1,0 +1,59 @@
+{
+  "reviews": [
+    {
+      "id": 1,
+      "name": "Berkly Shepley",
+      "dealership": 1,
+      "review": "Total buy-in for this dealership. The staff was transparent, courteous, and efficient from test drive to signing.",
+      "purchase": true,
+      "purchase_date": "07/11/2023",
+      "car_make": "Audi",
+      "car_model": "A6",
+      "car_year": 2021
+    },
+    {
+      "id": 2,
+      "name": "Gwenora Desporte",
+      "dealership": 1,
+      "review": "Fantastic services! The sales consultant guided us with zero pressure, and their vehicle condition was impeccable.",
+      "purchase": true,
+      "purchase_date": "06/18/2023",
+      "car_make": "Toyota",
+      "car_model": "Camry",
+      "car_year": 2022
+    },
+    {
+      "id": 3,
+      "name": "Johnathan Miller",
+      "dealership": 3,
+      "review": "Very smooth purchasing experience in Kansas. Sub-Ex Kansas Motors offered competitive trade-in value.",
+      "purchase": true,
+      "purchase_date": "09/04/2023",
+      "car_make": "Honda",
+      "car_model": "Accord",
+      "car_year": 2023
+    },
+    {
+      "id": 4,
+      "name": "Sarah Connor",
+      "dealership": 3,
+      "review": "Prompt communication, quick paperwork, and the vehicle was detailed spotless before delivery.",
+      "purchase": true,
+      "purchase_date": "10/12/2023",
+      "car_make": "Ford",
+      "car_model": "Mustang",
+      "car_year": 2022
+    },
+    {
+      "id": 5,
+      "name": "Alex Mercer",
+      "dealership": 2,
+      "review": "Disappointed with post-sale follow up. Promised service coupon was not honored without multiple calls.",
+      "purchase": false,
+      "purchase_date": "03/15/2023",
+      "car_make": "Chevrolet",
+      "car_model": "Malibu",
+      "car_year": 2020
+    }
+  ]
+}

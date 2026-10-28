@@ -1,0 +1,18 @@
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background-color: #f8fafc;
+  color: #334155;
+  margin: 0;
+  padding: 0;
+}
+
+.dealers-header-section {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+}
+
+.table th {
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}

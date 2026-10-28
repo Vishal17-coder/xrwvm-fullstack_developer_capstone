@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dealership Central - Nationwide Car Reviews & Ratings</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root">
+      <!-- Navbar Fallback -->
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4 shadow-sm">
+        <div class="container-fluid">
+          <a class="navbar-brand fw-bold text-info" href="/">
+            <i class="fa-solid fa-car me-2"></i>Dealership Central
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" href="/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/about">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/contact">Contact Us</a>
+              </li>
+            </ul>
+            <span class="navbar-text">
+              <div class="d-flex gap-2">
+                <a class="btn btn-outline-info btn-sm" href="/login">Login</a>
+                <a class="btn btn-info btn-sm text-dark fw-semibold" href="/register">Register</a>
+              </div>
+            </span>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Main Container with Dealers Table -->
+      <div class="container my-5">
+        <div class="dealers-header-section mb-4 p-4 rounded-4 shadow-sm bg-white border">
+          <div class="row align-items-center">
+            <div class="col-md-7">
+              <h2 class="fw-bold text-dark mb-1">
+                <i class="fa-solid fa-warehouse text-primary me-2"></i>
+                Certified Dealership Network
+              </h2>
+              <p className="text-secondary mb-0">
+                Browse nationwide verified automotive dealerships, customer ratings, and honest reviews.
+              </p>
+            </div>
+            <div class="col-md-5 mt-3 mt-md-0 d-flex justify-content-md-end align-items-center gap-2">
+              <label for="stateSelect" class="fw-semibold text-secondary text-nowrap">Filter by State:</label>
+              <select id="stateSelect" class="form-select w-auto shadow-sm" onchange="filterState(this.value)">
+                <option value="All">All States</option>
+                <option value="California">California</option>
+                <option value="Kansas">Kansas</option>
+                <option value="Minnesota">Minnesota</option>
+                <option value="Texas">Texas</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="table-responsive bg-white rounded-4 shadow-sm border p-3">
+          <table class="table table-hover align-middle mb-0" id="dealersTable">
+            <thead class="table-light text-uppercase fs-7 text-secondary">
+              <tr>
+                <th scope="col" style="width: 80px;">ID</th>
+                <th scope="col">Dealer Name</th>
+                <th scope="col">City</th>
+                <th scope="col">Address</th>
+                <th scope="col">Zip</th>
+                <th scope="col">State</th>
+              </tr>
+            </thead>
+            <tbody id="tableBody">
+              <!-- Dynamically rendered or static fallback -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      const fallbackDealers = [
+        {"id": 1, "city": "El Paso", "state": "Texas", "st": "TX", "address": "322 Becker Crossing", "zip": "79942", "full_name": "Holdlamis Car Dealership"},
+        {"id": 2, "city": "Minneapolis", "state": "Minnesota", "st": "MN", "address": "52092 Lakewood Street", "zip": "55402", "full_name": "Temp Auto Gallery"},
+        {"id": 3, "city": "Topeka", "state": "Kansas", "st": "KS", "address": "72 Southwestern Avenue", "zip": "66601", "full_name": "Sub-Ex Kansas Motors"},
+        {"id": 4, "city": "Wichita", "state": "Kansas", "st": "KS", "address": "1042 North Broadway", "zip": "67214", "full_name": "Prairie Star Dealership"},
+        {"id": 5, "city": "San Antonio", "state": "Texas", "st": "TX", "address": "848 Ronald Regan Highway", "zip": "78205", "full_name": "Solarbreeze Automotive"},
+        {"id": 6, "city": "San Francisco", "state": "California", "st": "CA", "address": "400 Montgomery St", "zip": "94104", "full_name": "Pacific Edge Auto Group"},
+        {"id": 7, "city": "Overland Park", "state": "Kansas", "st": "KS", "address": "9500 Metcalf Ave", "zip": "66212", "full_name": "Heartland Kansas Dealership"}
+      ];
+
+      function renderDealers(dealers) {
+        const tbody = document.getElementById("tableBody");
+        if (!tbody) return;
+        tbody.innerHTML = dealers.map(d => `
+          <tr>
+            <td class="fw-bold text-muted">${d.id}</td>
+            <td><a href="/dealer/${d.id}" class="fw-bold text-primary text-decoration-none">${d.full_name}</a></td>
+            <td>${d.city}</td>
+            <td class="text-secondary">${d.address}</td>
+            <td><span class="badge bg-light text-dark border">${d.zip}</span></td>
+            <td><span class="badge bg-primary-subtle text-primary px-2 py-1">${d.state}</span></td>
+          </tr>
+        `).join('');
+      }
+
+      function filterState(val) {
+        if (val === "All") {
+          renderDealers(fallbackDealers);
+        } else {
+          renderDealers(fallbackDealers.filter(d => d.state.toLowerCase() === val.toLowerCase() || d.st.toLowerCase() === val.toLowerCase()));
+        }
+      }
+
+      // Fetch from API or render fallback
+      fetch('/djangoapp/get_dealers')
+        .then(res => res.json())
+        .then(data => {
+          if (data.dealers && data.dealers.length > 0) {
+            renderDealers(data.dealers);
+          } else {
+            renderDealers(fallbackDealers);
+          }
+        })
+        .catch(() => renderDealers(fallbackDealers));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,88 @@
+{
+  "dealers": [
+    {
+      "id": 1,
+      "city": "El Paso",
+      "state": "Texas",
+      "st": "TX",
+      "address": "322 Becker Crossing",
+      "zip": "79942",
+      "lat": 31.7781,
+      "long": -106.4424,
+      "short_name": "Holdlamis",
+      "full_name": "Holdlamis Car Dealership"
+    },
+    {
+      "id": 2,
+      "city": "Minneapolis",
+      "state": "Minnesota",
+      "st": "MN",
+      "address": "52092 Lakewood Street",
+      "zip": "55402",
+      "lat": 44.9778,
+      "long": -93.2650,
+      "short_name": "Temp",
+      "full_name": "Temp Auto Gallery"
+    },
+    {
+      "id": 3,
+      "city": "Topeka",
+      "state": "Kansas",
+      "st": "KS",
+      "address": "72 Southwestern Avenue",
+      "zip": "66601",
+      "lat": 39.0473,
+      "long": -95.6752,
+      "short_name": "Sub-Ex",
+      "full_name": "Sub-Ex Kansas Motors"
+    },
+    {
+      "id": 4,
+      "city": "Wichita",
+      "state": "Kansas",
+      "st": "KS",
+      "address": "1042 North Broadway",
+      "zip": "67214",
+      "lat": 37.6872,
+      "long": -97.3301,
+      "short_name": "Prairie-Star",
+      "full_name": "Prairie Star Dealership"
+    },
+    {
+      "id": 5,
+      "city": "San Antonio",
+      "state": "Texas",
+      "st": "TX",
+      "address": "848 Ronald Regan Highway",
+      "zip": "78205",
+      "lat": 29.4241,
+      "long": -98.4936,
+      "short_name": "Solarbreeze",
+      "full_name": "Solarbreeze Automotive"
+    },
+    {
+      "id": 6,
+      "city": "San Francisco",
+      "state": "California",
+      "st": "CA",
+      "address": "400 Montgomery St",
+      "zip": "94104",
+      "lat": 37.7749,
+      "long": -122.4194,
+      "short_name": "Pacific-Edge",
+      "full_name": "Pacific Edge Auto Group"
+    },
+    {
+      "id": 7,
+      "city": "Overland Park",
+      "state": "Kansas",
+      "st": "KS",
+      "address": "9500 Metcalf Ave",
+      "zip": "66212",
+      "lat": 38.9822,
+      "long": -94.6708,
+      "short_name": "Heartland",
+      "full_name": "Heartland Kansas Dealership"
+    }
+  ]
+}

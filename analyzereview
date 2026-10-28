@@ -1,0 +1,15 @@
+# cURL Command to Analyze Sentiment of Review Text:
+curl -X GET \
+  http://127.0.0.1:5000/analyze/Fantastic%20services \
+  -H 'Accept: application/json'
+
+# Response Output:
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "status": 200,
+  "text": "Fantastic services",
+  "sentiment": "positive",
+  "polarity": 0.4
+}

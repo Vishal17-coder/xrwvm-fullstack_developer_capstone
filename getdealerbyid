@@ -1,0 +1,24 @@
+# cURL Command to Fetch Details for Dealer ID 3:
+curl -X GET \
+  http://127.0.0.1:8000/djangoapp/dealer/3 \
+  -H 'Accept: application/json'
+
+# Response Output:
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "status": 200,
+  "dealer": {
+    "id": 3,
+    "city": "Topeka",
+    "state": "Kansas",
+    "st": "KS",
+    "address": "72 Southwestern Avenue",
+    "zip": "66601",
+    "lat": 39.0473,
+    "long": -95.6752,
+    "short_name": "Sub-Ex",
+    "full_name": "Sub-Ex Kansas Motors"
+  }
+}

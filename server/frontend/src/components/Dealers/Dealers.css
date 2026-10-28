@@ -1,0 +1,19 @@
+.dealers-header-section {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+}
+
+.dealer-name-link {
+  transition: color 0.15s ease-in-out;
+}
+
+.dealer-name-link:hover {
+  color: #0369a1 !important;
+  text-decoration: underline !important;
+}
+
+.table th {
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}

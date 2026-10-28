@@ -1,0 +1,160 @@
+# cURL Command to Fetch All Car Makes and Models:
+curl -X GET \
+  http://127.0.0.1:8000/djangoapp/get_cars \
+  -H 'Accept: application/json'
+
+# Response Output:
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "CarModels": [
+    {
+      "CarModel": "Pathfinder",
+      "CarMake": "NISSAN",
+      "Year": 2023,
+      "Type": "SUV",
+      "DealerId": 1
+    },
+    {
+      "CarModel": "Qashqai",
+      "CarMake": "NISSAN",
+      "Year": 2023,
+      "Type": "SUV",
+      "DealerId": 2
+    },
+    {
+      "CarModel": "X-Trail",
+      "CarMake": "NISSAN",
+      "Year": 2023,
+      "Type": "SUV",
+      "DealerId": 3
+    },
+    {
+      "CarModel": "A-Class",
+      "CarMake": "Mercedes",
+      "Year": 2023,
+      "Type": "SEDAN",
+      "DealerId": 1
+    },
+    {
+      "CarModel": "C-Class",
+      "CarMake": "Mercedes",
+      "Year": 2023,
+      "Type": "SEDAN",
+      "DealerId": 4
+    },
+    {
+      "CarModel": "E-Class",
+      "CarMake": "Mercedes",
+      "Year": 2023,
+      "Type": "SEDAN",
+      "DealerId": 5
+    },
+    {
+      "CarModel": "A4",
+      "CarMake": "Audi",
+      "Year": 2023,
+      "Type": "SEDAN",
+      "DealerId": 1
+    },
+    {
+      "CarModel": "A6",
+      "CarMake": "Audi",
+      "Year": 2022,
+      "Type": "SEDAN",
+      "DealerId": 2
+    },
+    {
+      "CarModel": "Q5",
+      "CarMake": "Audi",
+      "Year": 2023,
+      "Type": "SUV",
+      "DealerId": 3
+    },
+    {
+      "CarModel": "Sorrento",
+      "CarMake": "Kia",
+      "Year": 2023,
+      "Type": "SUV",
+      "DealerId": 4
+    },
+    {
+      "CarModel": "Carnival",
+      "CarMake": "Kia",
+      "Year": 2023,
+      "Type": "SUV",
+      "DealerId": 5
+    },
+    {
+      "CarModel": "Cerato",
+      "CarMake": "Kia",
+      "Year": 2023,
+      "Type": "SEDAN",
+      "DealerId": 6
+    },
+    {
+      "CarModel": "Corolla",
+      "CarMake": "Toyota",
+      "Year": 2023,
+      "Type": "SEDAN",
+      "DealerId": 1
+    },
+    {
+      "CarModel": "Camry",
+      "CarMake": "Toyota",
+      "Year": 2023,
+      "Type": "SEDAN",
+      "DealerId": 2
+    },
+    {
+      "CarModel": "RAV4",
+      "CarMake": "Toyota",
+      "Year": 2023,
+      "Type": "SUV",
+      "DealerId": 3
+    },
+    {
+      "CarModel": "Explorer",
+      "CarMake": "Ford",
+      "Year": 2023,
+      "Type": "SUV",
+      "DealerId": 4
+    },
+    {
+      "CarModel": "Mustang",
+      "CarMake": "Ford",
+      "Year": 2022,
+      "Type": "COUPE",
+      "DealerId": 5
+    },
+    {
+      "CarModel": "F-150",
+      "CarMake": "Ford",
+      "Year": 2023,
+      "Type": "TRUCK",
+      "DealerId": 6
+    },
+    {
+      "CarModel": "Civic",
+      "CarMake": "Honda",
+      "Year": 2023,
+      "Type": "SEDAN",
+      "DealerId": 7
+    },
+    {
+      "CarModel": "Accord",
+      "CarMake": "Honda",
+      "Year": 2023,
+      "Type": "SEDAN",
+      "DealerId": 3
+    },
+    {
+      "CarModel": "CR-V",
+      "CarMake": "Honda",
+      "Year": 2023,
+      "Type": "SUV",
+      "DealerId": 4
+    }
+  ]
+}

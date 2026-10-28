@@ -1,0 +1,14 @@
+# cURL Command to Logout User:
+curl -X GET \
+  http://127.0.0.1:8000/djangoapp/logout \
+  -H 'Cookie: sessionid=g3z4m9w1kp7r2qx5l8v0t1yn6sb4df8h'
+
+# Response Output:
+HTTP/1.1 200 OK
+Content-Type: application/json
+Set-Cookie: sessionid=""; expires=Thu, 01 Jan 1970 00:00:00 GMT; Max-Age=0; Path=/; SameSite=Lax
+
+{
+  "userName": "",
+  "status": "Logged out"
+}
